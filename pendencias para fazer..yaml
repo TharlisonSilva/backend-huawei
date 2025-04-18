@@ -1,0 +1,79 @@
+sys
+Aaa
+local-user [por.meu.user] password irreversible-cipher Ch@ngeme_123
+local-user [por.meu.user] service-type ssh
+local-user [por.meu.user] level 3
+local-user [por.meu.user] state block fail-times 3 interval 5
+ssh user [por.meu.user]
+ssh user [por.meu.user] authentication-type password
+commit
+
+change now? 
+writer.print("Y\r\n");
+
+old password:
+writer.print(oldpass + "\r\n");
+
+new password:
+writer.print(newPass1 + "\r\n");
+
+output.contains("retype new password:") || output.contains("confirm new password:")
+writer.print(newPass1 + "\r\n");
+
+
+criar rota de login no cliente com os dados da plataforma(web).
+    - email
+    - senha
+
+criar rota para resetar senha da plataforma(web)
+    - email
+
+criar rota para cadastrar usuario router
+[ habilitar ssh default ]
+    - host
+    - port
+    - user 
+    - password
+
+criar rota para salvar os dados de acesso(ssh) dele no banco.
+    - host
+    - port
+    - user 
+    - password
+
+criar rota para alterar senha de usuario(ssh)
+    - user
+    - new password
+
+
+Ping PPPOE
+Desconexão PPPOE
+Rota de trace route
+Rota de statistica de usuario PPPOE
+
+
+
+
+acredito que para primeira exibição precisamos ter as seguintes funcionalidades:
+
+•⁠  ⁠Graficos das interfaces
+•⁠  ⁠Adição de IPs e rotas estaticas
+•⁠  ⁠Verificação de usuario PPPOE, incluindo informações avançadas caso cliente queira;
+•⁠  ⁠Verificação de erro PPPoE;
+•⁠  ⁠Desconexão te usuarios PPPoE;
+•⁠  ⁠Verificar licença;
+•⁠  ⁠Verificar versão e patch;
+•⁠  ⁠display acess-user user-type pppoe username "nome do usuario" verbose ( comando para verificar o PPPOE )
+•⁠  ⁠Verificar estatisticas BGP ( peer )
+•⁠  ⁠Verificar Rotas advertidas e recebidas em um peer ( TANTO V4 quanto V6 )
+•⁠  ⁠Verificar um prefixo na tabela de rotas main 
+•⁠  ⁠verificar rota na tabela de rotas de protocolos ( BGP , OSPF )
+•⁠  ⁠Verificar status de memoria, cpu, cooler;
+•⁠  ⁠Verificação de logs;
+•⁠  ⁠Tela de terminal para validação dos logs;
+•⁠  ⁠⁠looking glass
+•⁠  ⁠⁠flox
+•⁠  ⁠⁠vs
+•⁠  modulo para gerencia de switchs incluindo vlans, roteamento e mpls
+•⁠  modulo para configurações de olts
+•⁠  modulo para gerencia de Ips e vlan, documentação do provedor

@@ -1,0 +1,76 @@
+- Conexões BGP e BNG
+    - BNG
+        - Interfaces
+            - adicionar IPv4 e/ou IPv6
+             -> system-view
+             -> "Interface "nome da interface"
+                    -> IP address "ip" "mascara"
+             -> ipv6 enable
+             -> ipv6 address "ipv6/mascara"
+
+             
+            - habilitar estastiticas
+             -> statistics enable
+            - habilitar flow
+            ->  ip netstream inbound
+            ->  ip netstream outbound
+            ->  ipv6 netstream inbound
+             -> ipv6 netstream outbound
+            - List Interfaces (todas)
+                - ver informações
+              -> display curr int ( Verifica configuração das interfaces )
+             -> display interface brief
+                - excluir
+             -> "Interface "nome da interface"
+                 -> undo IP address "ip" "mascara" ( comando para desfazer uma config é sempre undo antes do comando "
+                - desabilitar
+                -> shutdown
+                - habilitar
+                -> undo shutdown
+
+            - criar sub-interface
+                 -> "Interface "nome da interface"."numero da subinterface"
+                      -> vlan type dot1q "numero da vlan"
+                - adicionar IPv4 e/ou IPv6
+                - habilitar estastiticas
+                - habilitar flow
+        
+        - usuarios (PPPoE / IPoE)
+            - ver informações
+               -> display access-user user-type pppoe
+            - ver os conectados
+             - ver usuario especifico
+              -> display access-user user-type pppoe username "nome do usuario"
+            - desconectar
+               ->  sys
+                   -> aaa
+                   -> cut access-user username "nome do usuario"
+            - teste de PING(v4 e v6)
+              -> ping "ip"
+            - listar usuario por interface(fisica)
+                -> display access-user user-type pppoe interface "nome da interface"
+            - listar por vlan
+                -> display access-user user-type pppoe pevlan "nome da interface"
+    - BGP
+        - Visualização
+            - Olhar a rota
+            - Olhar filtro
+            - Olhar Peer
+            - Olhar pré-fixo dentro de uma tabela de rotas.
+            - Customizar um filtro
+
+
+- criar o usuario e senha do equipamento(universal)
+- recuperar as informações do roteador
+    - hora
+    -> display clock
+    - data
+     -> display clock
+    - temperatura
+     -> display temperature
+    - versão equipmaento
+      -> display version
+    - patch de atualização
+      -> display patch
+    - versão do sistema operacional
+       -> dislay version

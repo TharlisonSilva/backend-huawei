@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    container_name: huawei_back-end
+    environment:
+      - DB_HOST=db
+      - DB_NAME=exemplo
+      - DB_USER=root
+      - DB_PASS=senha123
+    ports:
+      - "4001:4001"  # Exemplo se seu app roda na porta 5000

@@ -1,0 +1,12 @@
+flask
+flask_jwt_extended
+flask_sqlalchemy
+flask_marshmallow
+pymysql
+django
+netmiko
+pandas
+dotenv
+marshmallow-sqlalchemy
+undetected-chromedriver
+setuptools

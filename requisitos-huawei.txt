@@ -1,0 +1,43 @@
+- Conexões BGP e BNG
+    - BNG
+        - Interfaces
+            - adicionar IPv4 e/ou IPv6
+            - habilitar estastiticas
+            - habilitar flow
+
+            - List Interfaces (todas)
+                - ver informações
+                - excluir
+                - desabilitar
+                - habilitar
+
+            - criar sub-interface
+                - adicionar IPv4 e/ou IPv6
+                - habilitar estastiticas
+                - habilitar flow
+        
+        - usuarios (PPPoE / IPoE)
+            - ver informações
+            - ver os conectados
+            - desconectar
+            - teste de PING(v4 e v6)
+            - listar usuario por interface(fisica)
+            - listar por vlan
+
+    - BGP
+        - Visualização
+            - Olhar a rota
+            - Olhar filtro
+            - Olhar Pear
+            - Olhar pré-fixo dentro de uma tabela de rotas.
+            - Customizar um filtro
+
+
+- criar o usuario e senha do equipamento(universal)
+- recuperar as informações do roteador
+    - hora
+    - data
+    - temperatura
+    - versão equipmaento
+    - patch de atualização
+    - versão do sistema operacional
