@@ -10,3 +10,4 @@ dotenv
 marshmallow-sqlalchemy
 undetected-chromedriver
 setuptools
+gunicorn
