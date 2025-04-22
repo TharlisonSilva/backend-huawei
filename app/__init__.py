@@ -14,8 +14,10 @@ def create_app():
     db.init_app(app)
     ma.init_app(app)
 
-    from app.infra.entities.CustomerEntity import CustomerEntity
-    from app.infra.entities.UserSSHEntity import UserSSHEntity
+    
+    from app.infra.entities.user_entity import user_entity
+    from app.infra.entities.user_ssh_entity import user_ssh_entity
+    
 
     from .routes import init_routes
     jwt = JWTManager(app)

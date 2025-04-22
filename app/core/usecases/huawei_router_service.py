@@ -92,14 +92,12 @@ class huaweirouterservice:
                             'port': int(port)
                         }
         try:
-            print(interfaceName)
             connection = ConnectHandler(device_type='huawei', fast_cli=True, **objConnection)
             connection.send_command('screen-length 0 temporary')            
             output = connection.send_command("display interface "+interfaceName, read_timeout=60)
             connection.disconnect()
             
             lines = output.split("\n")
-            print(lines)
 
             # Dicionário que vai conter todos os campos
             details = {
