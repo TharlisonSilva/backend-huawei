@@ -18,6 +18,10 @@ def create_app():
     from app.infra.entities.user_entity import user_entity
     from app.infra.entities.user_ssh_entity import user_ssh_entity
     
+    with app.app_context():
+        db.create_all()
+        from app.infra.initial_config import create_user_admin
+        create_user_admin.create(db.session)
 
     from .routes import init_routes
     jwt = JWTManager(app)
