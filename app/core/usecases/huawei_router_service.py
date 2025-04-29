@@ -44,12 +44,12 @@ class huaweirouterservice:
             return usersData
         
         except NetMikoTimeoutException:
-            print(f"Timeout ao tentar conectar ao dispositivo {host}:{port}")
-            return (f"Timeout ao tentar conectar ao dispositivo {host}:{port}")
+            print(f"Timeout ao tentar conectar ao dispositivo {host}:{port} / user:{username} / password:{password}")
+            return (f"Timeout ao tentar conectar ao dispositivo {host}:{port} / user:{username} / password:{password}")
 
         except NetMikoAuthenticationException:
-            print(f"Falha de autenticação ao tentar conectar ao dispositivo {host}:{port}")
-            return (f"Falha de autenticação ao tentar conectar ao dispositivo {host}:{port}")
+            print(f"Falha de autenticação ao tentar conectar ao dispositivo {host}:{port} / user:{username} / password:{password}")
+            return (f"Falha de autenticação ao tentar conectar ao dispositivo {host}:{port} / user:{username} / password:{password}")
 
         except Exception as e:
             print(f"Erro inesperado ao conectar no dispositivo {host}:{port}: {e}")

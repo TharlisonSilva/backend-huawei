@@ -123,9 +123,6 @@ def init_routes(app):
     @require_jwt
     @require_role("admin")
     def get_users():
-        auth_header = request.headers.get('Authorization')
-        if not auth_header:
-            return jsonify({"msg": "Authorization header is missing"}), 401
         try:
             response = huaweirouterservice.getUsersPPOE(host, port, username, password)
             if not response:
