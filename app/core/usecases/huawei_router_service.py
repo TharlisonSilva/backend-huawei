@@ -43,17 +43,9 @@ class huaweirouterservice:
 
             return usersData
         
-        except NetMikoTimeoutException:
-            print(f"Timeout ao tentar conectar ao dispositivo {host}:{port} / user:{username} / password:{password}")
-            return (f"Timeout ao tentar conectar ao dispositivo {host}:{port} / user:{username} / password:{password}")
-
-        except NetMikoAuthenticationException:
-            print(f"Falha de autenticação ao tentar conectar ao dispositivo {host}:{port} / user:{username} / password:{password}")
-            return (f"Falha de autenticação ao tentar conectar ao dispositivo {host}:{port} / user:{username} / password:{password}")
-
         except Exception as e:
-            print(f"Erro inesperado ao conectar no dispositivo {host}:{port}: {e}")
-            return (f"Erro inesperado ao conectar no dispositivo {host}:{port}: {e}")
+            print(f"Erro inesperado ao conectar no dispositivo {host}:{port} / user:{username} / password:{password} Error: {e}")
+            return(f"Erro inesperado ao conectar no dispositivo {host}:{port} / user:{username} / password:{password} Error: {e}")
 
     def getRouterDetails(host, port, username, password):
         try:
