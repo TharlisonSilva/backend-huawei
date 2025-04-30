@@ -17,7 +17,7 @@ class huaweirouterservice:
                             'port': int(port)
                         }
         
-            connection = ConnectHandler(device_type='huawei', **objConnection)
+            connection = ConnectHandler(device_type='huawei', fast_cli=True, conn_timeout=90, **objConnection)
             connection.send_command('screen-length 0 temporary')            
             output = connection.send_command("display access-user user-type pppoe", read_timeout=60)
             connection.disconnect()
@@ -55,7 +55,7 @@ class huaweirouterservice:
                             'port': int(port)
                         }
         
-            connection = ConnectHandler(device_type='huawei', **objConnection)
+            connection = ConnectHandler(device_type='huawei', fast_cli=True, conn_timeout=90, **objConnection)
             connection.send_command('screen-length 0 temporary')            
             temperature = connection.send_command("display temperature", read_timeout=60)
 
@@ -84,7 +84,7 @@ class huaweirouterservice:
                             'port': int(port)
                         }
         try:
-            connection = ConnectHandler(device_type='huawei', fast_cli=True, **objConnection)
+            connection = ConnectHandler(device_type='huawei', fast_cli=True, conn_timeout=90, **objConnection)
             connection.send_command('screen-length 0 temporary')            
             output = connection.send_command("display interface "+interfaceName, read_timeout=60)
             connection.disconnect()

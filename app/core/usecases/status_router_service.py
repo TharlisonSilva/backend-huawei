@@ -12,7 +12,7 @@ def getCpuUsage(host, port, user, password):
                             'port': int(port)
                         }
         
-        connection = ConnectHandler(device_type='huawei', **objConnection)
+        connection = ConnectHandler(device_type='huawei', fast_cli=True, conn_timeout=90, **objConnection)
         connection.send_command('screen-length 0 temporary')            
         output = connection.send_command("display cpu-usage", read_timeout=60)
         connection.disconnect()
@@ -163,7 +163,7 @@ def getMemoryUsage(host, port, user, password):
                             'port': int(port)
                         }
         
-        connection = ConnectHandler(device_type='huawei', **objConnection)
+        connection = ConnectHandler(device_type='huawei', fast_cli=True, conn_timeout=90, **objConnection)
         connection.send_command('screen-length 0 temporary')            
         output = connection.send_command("display memory-usage", read_timeout=60)
         connection.disconnect()
@@ -220,7 +220,7 @@ def getTemperature(host, port, user, password):
                             'port': int(port)
                         }
         
-        connection = ConnectHandler(device_type='huawei', **objConnection)
+        connection = ConnectHandler(device_type='huawei', fast_cli=True, conn_timeout=90, **objConnection)
         connection.send_command('screen-length 0 temporary')            
         output = connection.send_command("display temperature", read_timeout=60)
         connection.disconnect()
@@ -336,7 +336,7 @@ def getInfoRouter(host, port, user, password):
                             'port': int(port)
                         }
         
-        connection = ConnectHandler(device_type='huawei', **objConnection)
+        connection = ConnectHandler(device_type='huawei', fast_cli=True, conn_timeout=90, **objConnection)
         connection.send_command('screen-length 0 temporary')            
         output = connection.send_command("display version", read_timeout=60)
         connection.disconnect()

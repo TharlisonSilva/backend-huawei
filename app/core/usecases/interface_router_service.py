@@ -78,7 +78,7 @@ def getInterfaceStep1(host, port, username, password):
                         'port': int(port)
                     }
     
-        connection = ConnectHandler(device_type='huawei', **objConnection)
+        connection = ConnectHandler(device_type='huawei', fast_cli=True, conn_timeout=90, **objConnection)
         connection.send_command('screen-length 0 temporary')            
         output = connection.send_command("dis curr int", read_timeout=60)
         connection.disconnect()
@@ -176,7 +176,7 @@ def getInterfaceStep2(host, port, username, password):
                         'port': int(port)
                     }
     
-        connection = ConnectHandler(device_type='huawei', **objConnection)
+        connection = ConnectHandler(device_type='huawei', fast_cli=True, conn_timeout=90, **objConnection)
         connection.send_command('screen-length 0 temporary')
         output = connection.send_command("display interface brief", read_timeout=60)
         connection.disconnect()
